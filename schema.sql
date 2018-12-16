@@ -25,7 +25,9 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
   ("BMW", "Cars", 3999.00, 20),
   ("Guitar", "Instruments", 123.45, 20),
   ("Flute", "Instruments", 678.90, 20),
-  ("Mandolin", "Instruments", .25, 20),
+  ("Mandolin", "Instruments", .25, 20);
+
+  SELECT * FROM products;
 
 ALTER TABLE products ADD product_sales DECIMAL(10,2) NOT NULL;
 

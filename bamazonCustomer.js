@@ -3,11 +3,13 @@ var inquirer = require('inquirer');
 var keys = require('./keys');
 var colors = require('colors');
 var columnify = require('columnify');
+// var connection = new Connection (keys.connection);
 var connection = mysql.createConnection({
-    host: keys.host,
-    user: keys.user,
-    password: keys.password,
-    database: keys.database
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "",
+    database: "bamazon"
 });
 
 function showInventory() {

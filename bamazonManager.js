@@ -4,10 +4,11 @@ var keys = require('./keys');
 var colors = require('colors');
 var columnify = require('columnify');
 var connection = mysql.createConnection({
-    host: keys.host,
-    user: keys.user,
-    password: keys.password,
-    database: keys.database
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "",
+    database: "bamazon"
 });
 var options = {
     'View Products for Sale': () => { showInventory() },
@@ -94,7 +95,7 @@ function addInventory() {
             choices: product_catalog_names
         }, {
             name: "chosenAmount",
-            message: "How many units to purchase?",
+            message: "How many units to add?",
             type: "input",
             validate: (value) => {
                 var valid = !isNaN(parseFloat(value));
@@ -147,7 +148,7 @@ function addProduct() {
             name: "department",
             message: "What Department Will This Product Be In?",
             type: "list",
-            choices: product_catalog_dept
+            choices: department_name
         }, {
             name: "new_price",
             message: "What will be the Retail Price?",
@@ -158,7 +159,7 @@ function addProduct() {
             }
         }, {
             name: "new_stock",
-            message: "How Many Units to Purchase?",
+            message: "How Many Units to add?",
             type: "input",
             validate: (value) => {
                 var valid = !isNaN(parseFloat(value));

@@ -4,10 +4,11 @@ var keys = require('./keys');
 var colors = require('colors');
 var columnify = require('columnify');
 var connection = mysql.createConnection({
-    host: keys.host,
-    user: keys.user,
-    password: keys.password,
-    database: keys.database
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "",
+    database: "bamazon"
 });
 var options = {
     'View Product Sales by Department': () => { showDeptSales() },
