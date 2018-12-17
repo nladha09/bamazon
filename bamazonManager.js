@@ -116,7 +116,7 @@ function addInventory() {
 
 function addProduct() {
     var product_catalog_dept = [];
-    connection.query('SELECT department_name FROM departments GROUP BY department_Name', function(error, results) {
+    connection.query('SELECT department_name FROM departments GROUP BY department_name', function(error, results) {
         if (error) throw error;
 
         results.forEach((element) => {
@@ -146,9 +146,9 @@ function addProduct() {
             }
         }, {
             name: "department",
-            message: "What Department Will This Product Be In?",
+            message: "What Department will This Product be in?",
             type: "list",
-            choices: department_name
+            choices: ["Games", "Cars", "Instruments"]
         }, {
             name: "new_price",
             message: "What will be the Retail Price?",

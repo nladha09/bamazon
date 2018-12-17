@@ -24,7 +24,7 @@ function showInventory() {
         }))
         console.log(`------------------------------------------------------------------------------------`.yellow);
 
-        // removes RowDataPacket 
+        // removes RowDataPacket Constructor label
         var newResults = JSON.parse(JSON.stringify(results));
 
         // store data in new arrays for catalog selection
