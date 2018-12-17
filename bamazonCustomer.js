@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
 function showInventory() {
     var product_catalog = [];
     var product_catalog_names = [];
-    // only display items in stock
+    // displays items in stock
     connection.query('SELECT * FROM products WHERE stock_quantity != 0', function (error, results) {
         if (error) throw error;
         console.log(`------------------------------------------------------------------------------------`.yellow);
@@ -27,7 +27,7 @@ function showInventory() {
         // removes RowDataPacket Constructor label
         var newResults = JSON.parse(JSON.stringify(results));
 
-        // store data in new arrays for catalog selection
+        // store data in new arrays
         newResults.forEach((element) => {
             product_catalog_names.push(element.product_name);
         }, this);
@@ -58,10 +58,10 @@ function purchase(product_catalog, product_catalog_names) {
             }
         }
     ]).then(function (answers) {
-        // refrences id of chosen product
+        // references id of chosen product
         var chosen_id = product_catalog_names.indexOf(answers.purchase_id) + 1;
 
-        // stores product selected by user to edit db
+        // stores product selected to edit db
         var chosen_product = product_catalog[chosen_id - 1];
 
         // validate if product is in stock
