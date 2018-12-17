@@ -42,7 +42,7 @@ over_head_cost DECIMAL(10,2) NOT NULL
 SELECT * FROM departments;
 
 INSERT INTO departments (department_name, over_head_cost)
-	VALUES ("Games", 2000), ("Cars", 1000), ("Instruments", 800)
+	VALUES ("Games", 2000), ("Cars", 1000), ("Instruments", 800);
 
 SELECT departments.department_name, departments.over_head_cost, products.product_sales
 FROM departments
