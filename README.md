@@ -30,4 +30,4 @@ An Amazon-like storefront with MySQL &amp; node.js
 >
 >View Product Sales by Department
 >
->Create New Department
+>Create New Department 
