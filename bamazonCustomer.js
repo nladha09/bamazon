@@ -66,16 +66,17 @@ function purchase(product_catalog, product_catalog_names) {
 
         // validate if product is in stock
         if (chosen_product.stock_quantity < answers.purchase_amount) {
+            var current_quantity = chosen_product.stock_quantity;
             console.log(`\n - - - - -  - - - - - - - - - - - - - - - - - - \n`.red);
-            console.log('Insufficient quantity!'.red);
+            console.log("Insufficient quantity! There are only ".red + `${current_quantity}`.red + " left".red);
             console.log(`\n - - - - -  - - - - - - - - - - - - - - - - - - \n`.red);
 
             purchase(product_catalog, product_catalog_names);
         } else {
             // store current stock amount
             var current_quantity = chosen_product.stock_quantity - answers.purchase_amount;
-            var totalSale = Math.round(answers.purchase_amount * chosen_product.price);
-            var increaseSales = Math.round(chosen_product.product_sales) + totalSale;
+            var totalSale = Math.round(answers.purchase_amount * chosen_product.price).toFixed(3);
+            var increaseSales = Math.round(chosen_product.product_sales).toFixed(3) + totalSale;
             // update db of stock quantity
             connection.query(`UPDATE products SET stock_quantity=${current_quantity}, product_sales=${increaseSales} WHERE item_id = ${chosen_id}`, function (error, results) {
                 console.log(`\n - - - - -  - - - - - - - - - - - - - - - - - - \n`.green);
