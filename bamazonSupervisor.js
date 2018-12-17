@@ -30,7 +30,7 @@ function menuOptions() {
             'Exit'
         ]
     }]).then(function(answers) {
-        // runs the selected function
+        // runs the function for option selected
         options[answers.menu]();
     })
 }

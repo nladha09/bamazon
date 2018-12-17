@@ -18,7 +18,7 @@ var options = {
     'Exit': () => { connection.end(); }
 }
 
-// global storage of current catalog
+// empty arrays for global storage of current catalog
 var product_catalog = [];
 var product_catalog_names = [];
 
@@ -37,7 +37,7 @@ function menuOptions() {
             'Exit'
         ]
     }]).then(function(answers) {
-        // runs the selected function
+        // runs the function for option selected
         options[answers.menu]();
     })
 }
@@ -50,7 +50,7 @@ function showInventory() {
         console.log(columnify(results, { columns: ['item_id', 'product_name', 'department_name', 'price', 'stock_quantity'] }))
         console.log(`------------------------------------------------------------------------------------`.yellow);
 
-        // removes RowDataPacket 
+        // removes RowDataPacket Constructor label
         var newResults = JSON.parse(JSON.stringify(results));
 
         // store data in new arrays for catalog selection
