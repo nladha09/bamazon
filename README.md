@@ -1,4 +1,4 @@
-# bamazon
+# bamazon :department_store:
 An Amazon-like storefront with MySQL &amp; node.js
 
 [See video walkthrough here (full screen has better view)](https://drive.google.com/open?id=1X1r3DAO4rzxN8VBrtf6sEplXcDTHj-Hr)
