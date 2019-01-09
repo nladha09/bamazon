@@ -26,7 +26,7 @@ An Amazon-like storefront with MySQL &amp; node.js
 
 >Displays Departments table
 >
->Displays Product Sales column in products table - when a customer purchases anything from the store, the price of the product multiplied by the quantity purchased is added to the product's product_sales column & inventory
+>Displays Product Sales column in products table - when a customer purchases something from the store, the price of the product multiplied by the quantity purchased is added to the product's product_sales column & inventory
 >
 >View Product Sales by Department
 >
